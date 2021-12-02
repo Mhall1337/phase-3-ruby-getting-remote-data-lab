@@ -4,9 +4,9 @@ require 'open-uri'
 require 'json'
 
 class GetRequester
-    URL = ''
-    def initialize url
-        URL << url
+    # URL = ''
+    def initialize(url)
+        @url = url
     end
 
     def get_response_body
@@ -17,6 +17,6 @@ class GetRequester
     end
 
     def parse_json
-        JSON.parse(self.get_response_body)
+        JSON.parse(get_response_body)
     end
 end
